@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+
+members = ["bin", "day1"]
+
+[workspace.dependencies]
+anyhow = "1.0.71"
+
+[workspace.dependencies.day1]
+path = "day1"
