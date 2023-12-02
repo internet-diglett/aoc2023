@@ -19,8 +19,17 @@ struct Args {
 fn main() -> Result<()> {
     let args = Args::parse();
     let text = fs::read_to_string(args.input)?;
+
+    #[cfg(feature = "singlethread")]
     match args.day {
         1 => day1::print_answers(&text)?,
+        2 => day2::print_answers(&text)?,
+        _ => return Err(anyhow!("Solver not implemented for day {}", args.day)),
+    };
+
+    #[cfg(feature = "multithread")]
+    match args.day {
+        1 => day1::mt::print_answers(&text)?,
         _ => return Err(anyhow!("Solver not implemented for day {}", args.day)),
     };
     Ok(())

@@ -20,5 +20,7 @@ jobs:
       run: cargo build --verbose
     - name: Clippy
       run: cargo clippy -- --deny warnings
+    - name: Cargo fmt
+      run: cargo fmt --check
     - name: Run tests
       run: cargo test --verbose
