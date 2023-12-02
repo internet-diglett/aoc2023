@@ -107,6 +107,29 @@ pub fn solve_part_two(text: &str) -> Result<u64> {
     Ok(total)
 }
 
+pub mod mt {
+    use super::*;
+    use rayon::prelude::*;
+
+    pub fn solve_part_one(text: &str) -> Result<u64> {
+        let nums: Vec<u64> = text
+            .par_lines()
+            .map(extract_first_and_last_digits)
+            .collect::<Result<Vec<u64>>>()?;
+        let total: u64 = nums.par_iter().sum();
+        Ok(total)
+    }
+
+    pub fn solve_part_two(text: &str) -> Result<u64> {
+        let nums: Vec<u64> = text
+            .par_lines()
+            .map(extract_first_and_last_digit_or_numeric_word)
+            .collect::<Result<Vec<u64>>>()?;
+        let total: u64 = nums.par_iter().sum();
+        Ok(total)
+    }
+}
+
 pub fn print_answers(text: &str) -> Result<()> {
     let part_one = solve_part_one(text)?;
     let part_two = solve_part_two(text)?;
