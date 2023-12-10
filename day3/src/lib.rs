@@ -197,7 +197,7 @@ fn update_positions(
 /// use std::fs;
 ///
 /// let text = fs::read_to_string("src/part1_example.txt").unwrap();
-/// let result = solve_part_one(&text);
+/// let result = solve_part_one(&text).unwrap();
 /// assert_eq!(result, 4361)
 /// ```
 ///
@@ -265,7 +265,7 @@ pub fn solve_part_one(text: &str) -> Result<u64> {
 /// use std::fs;
 ///
 /// let text = fs::read_to_string("src/part1_example.txt").unwrap();
-/// let result = solve_part_two(&text);
+/// let result = solve_part_two(&text).unwrap();
 /// assert_eq!(result, 467835)
 /// ```
 ///
