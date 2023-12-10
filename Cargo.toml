@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 
-members = ["bin", "day1", "day2", "day3"]
+members = ["bin", "day1", "day2", "day3", "day4"]
 
 [workspace.dependencies]
 anyhow = "1.0.71"
@@ -15,3 +15,6 @@ path = "day2"
 
 [workspace.dependencies.day3]
 path = "day3"
+
+[workspace.dependencies.day4]
+path = "day4"
