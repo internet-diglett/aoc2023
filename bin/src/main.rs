@@ -25,6 +25,7 @@ fn main() -> Result<()> {
         1 => day1::print_answers(&text)?,
         2 => day2::print_answers(&text)?,
         3 => day3::print_answers(&text)?,
+        4 => day4::print_answers(&text)?,
         _ => return Err(anyhow!("Solver not implemented for day {}", args.day)),
     };
 
